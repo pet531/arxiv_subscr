@@ -1,5 +1,6 @@
 # arXiv subscription script
-This is to subscribe to your favourite authors and topics from arXiv.org server. 
+This is to subscribe to your favourite authors and topics from arXiv.org server.
+It uses a python wrapper for the arXiv's API by Lukas Schwab. See the LICENSE.txt in lib/ folder.
 
 # Usage
 
@@ -15,3 +16,7 @@ python arxbot.py
 
 Note that it will only consider article new if it appeared on the second 
 run after the query was added to the "list" file.
+
+# Dependencies
+
+For me it works with python 2.7.10.
