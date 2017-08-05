@@ -9,7 +9,7 @@ python collect.py
 
 It will collect new articles since the last time the script was launched to the new_articles file,
 separated by $. You can then do whatever you want with it. Example code that posts updates via your Telegram bot
-is provided in arxbot.py. Edit it to add your bot's credentials and and run:
+is provided in arxbot.py. Edit it to add your bot's credentials and run:
 
 python arxbot.py
 
