@@ -1,0 +1,7 @@
+# List the queries to which you wish to subscribe here. 
+# If DEF_CATEGORY=X is specified, X is applied to all queries after it, until the next DEF_CATEGORY= specification.
+DEF_CATEGORY=cat:math.AG
+au:grothendieck
+au:serre
+DEF_CATEGORY=cat:math.DG OR cat:math.NT
+au:riemann
