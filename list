@@ -1,9 +1,12 @@
 # List the queries to which you wish to subscribe here. 
 # If DEF_CATEGORY=X is specified, X is applied to all queries after it, until the next DEF_CATEGORY= specification.
 # Queries will be handled to arXiv as is. Keep the format of DEF_CATEGORY: e.g., logical operations
-# should be written in caps.
+# should be written in caps. 
+# Another supported option is DEF_CATEGORY=math. It will just search in math.*
 DEF_CATEGORY=cat:math.AG
 au:grothendieck
 au:serre
 DEF_CATEGORY=cat:math.DG OR cat:math.NT
 au:riemann
+DEF_CATEGORY=math
+au:weil
