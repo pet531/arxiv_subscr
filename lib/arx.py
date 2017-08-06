@@ -3,7 +3,7 @@ import subprocess
 
 chunk = 100
 DEFSEARCH = "DEF_CATEGORY="
-MATH = "math.AG OR math.AT OR math.AP OR math.CT OR math.CA OR math.CO OR math.AC OR math.CV OR math.DG OR math.DS OR math.FA OR math.GM OR math.GN OR math.GT OR math.GR OR math.HO OR math.IT OR math.KT OR math.LO OR math.MP OR math.MG OR math.NT OR math.NA OR math.OA OR math.OC OR math.PR OR math.QA OR math.RT OR math.RA OR math.SP OR math.ST OR math.SG"
+MATH = "cat:math.AG OR cat:math.AT OR cat:math.AP OR cat:math.CT OR cat:math.CA OR cat:math.CO OR cat:math.AC OR cat:math.CV OR cat:math.DG OR cat:math.DS OR cat:math.FA OR cat:math.GM OR cat:math.GN OR cat:math.GT OR cat:math.GR OR cat:math.HO OR cat:math.IT OR cat:math.KT OR cat:math.LO OR cat:math.MP OR cat:math.MG OR cat:math.NT OR cat:math.NA OR cat:math.OA OR cat:math.OC OR cat:math.PR OR cat:math.QA OR cat:math.RT OR cat:math.RA OR cat:math.SP OR cat:math.ST OR cat:math.SG"
 
 def count_results(q, st, suf):
     c = 0
