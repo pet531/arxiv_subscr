@@ -66,7 +66,7 @@ def get_new_log(user_ls):
         if st.strip().startswith(DEFSEARCH):
             suff = st[len(DEFSEARCH):].strip()
             if suff == "math":
-                suff = MATH
+                suff = "AND (" + MATH + ")"
             else:
                 suff = "AND (" + suff + ")"
         else:
