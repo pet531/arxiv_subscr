@@ -3,6 +3,7 @@ import subprocess
 
 chunk = 100
 DEFSEARCH = "DEF_CATEGORY="
+MATH = "math.AG OR math.AT OR math.AP OR math.CT OR math.CA OR math.CO OR math.AC OR math.CV OR math.DG OR math.DS OR math.FA OR math.GM OR math.GN OR math.GT OR math.GR OR math.HO OR math.IT OR math.KT OR math.LO OR math.MP OR math.MG OR math.NT OR math.NA OR math.OA OR math.OC OR math.PR OR math.QA OR math.RT OR math.RA OR math.SP OR math.ST OR math.SG"
 
 def count_results(q, st, suf):
     c = 0
@@ -63,7 +64,11 @@ def get_new_log(user_ls):
 
     for st in current_list:
         if st.strip().startswith(DEFSEARCH):
-            suff = "AND (" + st[len(DEFSEARCH):].strip() + ")"
+            suff = st[len(DEFSEARCH):].strip()
+            if suff == "math":
+                suff = MATH
+            else:
+                suff = "AND (" + suff + ")"
         else:
             results = collect_all(st.strip(), 0, suff)
             results = [parse_id(x.id) for x in results]
