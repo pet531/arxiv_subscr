@@ -1,11 +1,8 @@
-#This is to post new abstracts to telegram. 
-
 from lib import arx
 import subprocess
 
-#SPECIFY YOUR TOKEN AND CHAT HERE
-my_token = "your bot's token"
-chat_id = "id of the chat you want to post stuff too"
+my_token = "401765530:AAHFC0qWJLre7c5iJGWT1T6PykJrDk7FGZM"
+chat_id = "-1001132498844"
 
 arx.check_for_new("log", "list", "for_bot")
 
@@ -18,9 +15,14 @@ def send_to_bot(chat, token, message):
         return False
 
 def post_new(file):
-    query = open(file, "r")
-    qs = query.readlines()
-    query.close()
+    try: 
+        query = open(file, "r")
+        qs = query.readlines()
+        query.close()
+    except:
+        print "No log yet."
+        return 0
+
     t = ""
     failed = []
     for x in qs:

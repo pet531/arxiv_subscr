@@ -3,7 +3,7 @@ import subprocess
 
 chunk = 100
 DEFSEARCH = "DEF_CATEGORY="
-MATH = "cat:math.AG OR cat:math.AT OR cat:math.AP OR cat:math.CT OR cat:math.CA OR cat:math.CO OR cat:math.AC OR cat:math.CV OR cat:math.DG OR cat:math.DS OR cat:math.FA OR cat:math.GM OR cat:math.GN OR cat:math.GT OR cat:math.GR OR cat:math.HO OR cat:math.IT OR cat:math.KT OR cat:math.LO OR cat:math.MP OR cat:math.MG OR cat:math.NT OR cat:math.NA OR cat:math.OA OR cat:math.OC OR cat:math.PR OR cat:math.QA OR cat:math.RT OR cat:math.RA OR cat:math.SP OR cat:math.ST OR cat:math.SG"
+MATH = "math.AG OR math.AT OR math.AP OR math.CT OR math.CA OR math.CO OR math.AC OR math.CV OR math.DG OR math.DS OR math.FA OR math.GM OR math.GN OR math.GT OR math.GR OR math.HO OR math.IT OR math.KT OR math.LO OR math.MP OR math.MG OR math.NT OR math.NA OR math.OA OR math.OC OR math.PR OR math.QA OR math.RT OR math.RA OR math.SP OR math.ST OR math.SG"
 
 def count_results(q, st, suf):
     c = 0
@@ -28,11 +28,20 @@ def collect_all(q, st, suf):
     return sorted(c, key = lambda x: x.published)
 
 def write_new_log(ls, log):
+    try:
+        old_log_file = open(log, "r")
+        old_log = old_log_file.readlines()
+        old_log_file.close()
+    except:
+        old_log = []
+    old_log = [x.strip() for x in old_log] 
     log_file = open(log, "w")
     fls = set(ls[0]).union(set(ls[1]))
+    fls = fls.union(set(old_log))
     for s in fls:
         log_file.write(s)
         log_file.write("\n")
+    log_file.close()
     return 0
 
 def get_new_log(user_ls):
@@ -66,7 +75,7 @@ def get_new_log(user_ls):
         if st.strip().startswith(DEFSEARCH):
             suff = st[len(DEFSEARCH):].strip()
             if suff == "math":
-                suff = "AND (" + MATH + ")"
+                suff = MATH
             else:
                 suff = "AND (" + suff + ")"
         else:
