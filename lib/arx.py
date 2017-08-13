@@ -108,8 +108,10 @@ def check_for_new(log, user_ls, output):
     for p in plist:
         new_file.write((', '.join(p.authors) + "\n" + p.title + "\n\n" +p.arxiv_comment + "\n\n" + p.summary + "\n" + p.pdf_url + "\n$\n").encode("utf-8"))
     new_file.close()
+    print "New papers:", len(plist)
+    print "Number of papers in log:", len(ids_new[0].union(ids_new[1]))
     write_new_log(ids_new, log)
-
+    
 def is_int(s):
      try:
              int(s)
