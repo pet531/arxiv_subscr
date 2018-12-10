@@ -1,3 +1,5 @@
+WARNING: DOES NOT WORK PROPERLY :(
+
 # arXiv subscription script
 This is to subscribe to your favourite authors and topics from arXiv.org server.
 It uses a python wrapper for the arXiv's API by Lukas Schwab. See the LICENSE.txt in lib/ folder.
